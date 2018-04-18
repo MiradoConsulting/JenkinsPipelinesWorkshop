@@ -11,11 +11,11 @@ def call(body) {
     node() {
         try {
             stage("First step") {
-                echo "Value for foo is ${foo}"
+                echo "Value for foo is ${config.foo}"
             }
 
             stage("Second step") {
-                echo "Value for bar is ${bar}"
+                echo "Value for bar is ${config.bar}"
             }
 
         } catch (error) {
