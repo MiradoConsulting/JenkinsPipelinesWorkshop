@@ -1,4 +1,4 @@
 node() {
-	echo "Value for foo is tjenare"
+	echo "Value for bar is tjenare"
 }
 
