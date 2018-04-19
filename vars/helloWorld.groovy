@@ -1,7 +1,7 @@
 def call(body) {
     def config = [
-            foo:  "bar",
-            bar: "foo"
+            foo:  "foo",
+            bar: "bar"
     ]
 
     body.resolveStrategy = Closure.DELEGATE_FIRST
