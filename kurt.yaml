@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: kurt
-  replicas: 3 # tells deployment to run 2 pods matching the template
+  replicas: 1 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
@@ -16,7 +16,4 @@ spec:
     spec:
       containers:
       - name: kurt
-        image: progrium/stress
-        args: ["--cpu 2 --io 1 --vm 2 --vm-bytes 128M --timeout 10s"]
-        ports:
-        - containerPort: 80
+        image: cassandra
