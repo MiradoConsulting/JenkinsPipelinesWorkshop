@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: kurt
-        image: nginx:1.7.9
+        image: progrium/stress
         ports:
         - containerPort: 80
