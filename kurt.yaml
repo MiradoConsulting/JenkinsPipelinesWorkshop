@@ -1,14 +1,32 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: kurt-deployment
+  name: kurt
+  labels:
+    app: kurt
 spec:
+  ports:
+  - port: 444
+    targetPort: 80
   type: NodePort
   selector:
-    app: nginx
-    release: nginx
+    app: kurt
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: kurt
+  labels:
+    app: kurt
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kurt
     spec:
       containers:
+      - name: kurt
         image: nginx
         ports:
-          -containerPort: 80
+        - containerPort: 80
