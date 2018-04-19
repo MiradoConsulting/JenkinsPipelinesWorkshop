@@ -1,8 +1,9 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
-kind: Deployment
+kind: Service
 metadata:
   name: kurt-deployment
 spec:
+  type: NodePort
   selector:
     matchLabels:
       app: kurt
@@ -16,4 +17,4 @@ spec:
     spec:
       containers:
       - name: kurt
-        image: cassandra
+        image: nginx
